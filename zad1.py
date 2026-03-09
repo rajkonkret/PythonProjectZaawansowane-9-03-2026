@@ -68,3 +68,74 @@ print(True or False)  # True
 print(True & False)  # False bitowo
 
 # kolekcje
+
+# lista
+# dowolny typ danych
+lista = list()
+lista2 = []
+lista = [9, 8, 8, 9, 9]
+lista2 = [10, 20, 20, 20]
+
+lista3 = lista  # kopia referencji
+print(lista)  # [9, 8, 8, 9, 9]
+print(lista3)  # [9, 8, 8, 9, 9]
+
+print(id(lista))
+print(id(lista3))  # 1626004967360
+print(lista is lista3)  # True
+
+lista_copy = lista.copy()
+print(id(lista_copy))  # 2373784015872
+print(id(lista))  # 2373780688832
+
+# krotka
+a = ()
+print(a)  # ()
+print(type(a))  # <class 'tuple'>
+tupla = "tomek", "radek", "zenek", "marek"
+print(type(tupla))
+print(tupla)  # ('tomek', 'radek', 'zenek', 'marek')
+
+a = 1,
+print(a)  # (1,)
+print(type(a))  # <class 'tuple'>
+
+a = (1,)
+print(a)
+
+# tupla[0] = "Roman" # TypeError: 'tuple' object does not support item assignment
+# del tupla
+# print(tupla)  # NameError: name 'tupla' is not defined. Did you mean: 'tuple'?
+
+print(sorted(tupla))  # ['marek', 'radek', 'tomek', 'zenek']
+
+# zbior - brak duplikatow
+zb = set()
+print(zb)  # set()
+
+zbior1 = {10, 15, 15, 20, 35, 45}
+zbior2 = {35, 45, 45, 55, 65}
+
+print(zbior1)
+print(zbior2)
+# {35, 20, 10, 45, 15}
+# {65, 35, 45, 55}
+
+print(zbior1 & zbior2)  # {35, 45}
+print(zbior1.intersection(zbior2))  # {35, 45}
+
+print(zbior1.union(zbior2))  # {65, 35, 10, 45, 15, 20, 55} odpowiednik | suma zbiorów
+
+# słownik
+# klucz wartosci
+slownik = {"name": "Radek"}  # odpowiednik jsona
+print(slownik['name'])  # Radek
+
+lista = [1, 2, 6, 3, 4, 6, 5, 6, 7, 6, 8]
+while 6 in lista:
+    lista.remove(6)
+print(lista)
+
+print(list(dict.fromkeys(lista)))  # [1, 2, 3, 4, 5, 7, 8]
+
+# frozenset
