@@ -82,3 +82,4 @@ cube = list(map(lambda x: x ** 2, liczby))
 
 # list comprehension
 dane = [i ** 7 for i in range(12_000)]
+print(dane)
