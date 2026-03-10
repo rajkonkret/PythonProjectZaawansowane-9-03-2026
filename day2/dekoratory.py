@@ -72,6 +72,51 @@ try:
     print(mnozenie(6, 8))
     print(mnozenie(6, "osiem"))
 except TypeError as te:
-    print(te) # 48
+    print(te)  # 48
+
+
 # Argument: osiem nie jest typu: <class 'int'>
 
+def memoizacja(funkcja):
+    cache = {}
+
+    def wrapper(*args):
+        if args in cache:
+            print(f"Zwracanie wyniku z ache dla argumentów {args}")
+            print(f"funkcja: {funkcja.__name__}({args} -> {funkcja(*args)})")
+            return cache[args]
+        else:
+            wynik = funkcja(*args)
+            cache[args] = wynik
+            return wynik
+
+    return wrapper
+
+
+@memoizacja
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+print(fibonacci(10))
+# Zwracanie wyniku z ache dla argumentów (1,)
+# funkcja: fibonacci((1,) -> 1)
+# Zwracanie wyniku z ache dla argumentów (0,)
+# funkcja: fibonacci((0,) -> 0)
+# funkcja: fibonacci((2,) -> 1)
+# Zwracanie wyniku z ache dla argumentów (1,)
+# funkcja: fibonacci((1,) -> 1)
+# funkcja: fibonacci((3,) -> 2)
+# Zwracanie wyniku z ache dla argumentów (2,)
+# Zwracanie wyniku z ache dla argumentów (1,)
+# funkcja: fibonacci((1,) -> 1)
+# Zwracanie wyniku z ache dla argumentów (0,)
+# funkcja: fibonacci((0,) -> 0)
+# funkcja: fibonacci((2,) -> 1)
+# funkcja: fibonacci((4,) -> 3)
+# funkcja: fibonacci((6,) -> 8)
+# funkcja: fibonacci((8,) -> 21)
+# 55
