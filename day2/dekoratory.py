@@ -45,5 +45,23 @@ def info(i):
 
 
 info("65432178900")
+
+
 # Wołana funkcja: info
 # Ważny kod: 65432178900
+
+def sprawdz_typy(typy):
+    def dekorator(funkcja):
+        def wrapper(*args, **kwargs):
+            for (arg, typ) in zip(args, typy):
+                if not isinstance(arg, typ):
+                    raise TypeError(f'Argument: {arg} nie jest typu: {typ}')
+            return funkcja(*args, **kwargs)
+
+        return wrapper
+
+    return dekorator
+
+@sprawdz_typy((int, int))
+def mnozenie(a, b):
+    return a * b
