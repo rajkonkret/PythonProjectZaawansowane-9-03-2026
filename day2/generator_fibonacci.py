@@ -29,3 +29,14 @@ def fibonaci_prime_generator(limit=None):
             count += 1
             if limit is not None and count >= limit:
                 break
+
+
+generator = fibonaci_prime_generator(limit=5)
+
+for prime in generator:
+    print(prime)
+# 3 2
+# 3
+# 5
+# 13
+# 89
