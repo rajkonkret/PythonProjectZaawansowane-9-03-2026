@@ -62,6 +62,16 @@ def sprawdz_typy(typy):
 
     return dekorator
 
+
 @sprawdz_typy((int, int))
 def mnozenie(a, b):
     return a * b
+
+
+try:
+    print(mnozenie(6, 8))
+    print(mnozenie(6, "osiem"))
+except TypeError as te:
+    print(te) # 48
+# Argument: osiem nie jest typu: <class 'int'>
+
