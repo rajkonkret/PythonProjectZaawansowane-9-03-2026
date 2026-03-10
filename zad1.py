@@ -139,3 +139,4 @@ print(lista)
 print(list(dict.fromkeys(lista)))  # [1, 2, 3, 4, 5, 7, 8]
 
 # frozenset
+# rajkonkret660@gmail.com
