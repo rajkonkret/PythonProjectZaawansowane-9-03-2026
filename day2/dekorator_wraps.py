@@ -45,6 +45,7 @@ print("doc:", mul.__doc__)
 print("annotations:", mul.__annotations__)
 print("signature:", inspect.signature(mul))
 print("has __wrapped__:", hasattr(mul, "__wrapped__"))
+print("unwrap -> signature", inspect.signature(inspect.unwrap(mul)))
 print()
 
 # === Bez @wraps ===
@@ -62,3 +63,4 @@ print()
 # annotations: {'a': <class 'int'>, 'b': <class 'int'>, 'return': <class 'int'>}
 # signature: (a: int, b: int) -> int
 # has __wrapped__: True
+# unwrap -> signature (a: int, b: int) -> int
