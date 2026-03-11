@@ -17,3 +17,11 @@ textbook.read()
 print("pokaż obiekty")
 print(novel)
 print(textbook)
+
+# wykorzystanie obiektu jako fubnkcja __call__
+print(novel(45))
+print(novel(60))
+print(textbook(60))
+# Ilość stron z dodatkami: 333, cena: 45 zł
+# Ilość stron z dodatkami: 333, cena: 60 zł
+# Ilość stron z dodatkami: 472, cena: 60 zł
