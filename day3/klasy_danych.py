@@ -49,4 +49,4 @@ print(p.licznik)
 p.licznik = 56
 print(p)
 # Dane(nazwa='pudełko', licznik=56, cena=11.45)
-print(p.__dict__) # {'nazwa': 'pudełko', '_licznik': 56, 'cena': 11.45}
+print(p.__dict__)  # {'nazwa': 'pudełko', '_licznik': 56, 'cena': 11.45}
