@@ -18,6 +18,9 @@ class Book(ABC):
     def __repr__(self):
         return f"Obiekt klasy {self.__class__.__name__} ({self.title} -> {self.author}"
 
+    def __call__(self, price):
+        return f"Ilość stron z dodatkami: {self.pages + 5}, cena: {price} zł"
+
     @abstractmethod
     def get_info(self):
         pass
