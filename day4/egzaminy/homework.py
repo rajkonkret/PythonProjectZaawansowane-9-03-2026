@@ -10,3 +10,4 @@ class Homework:
     def grade(self, value):
         if not (0 <= value <= 100):
             raise ValueError("Ocena musi być wartoscią z przedziału 0-100!")
+        self._grade = value
