@@ -10,7 +10,7 @@ class Exam:
             raise ValueError("Ocena musi być wartością z przeddziału 0-100!")
 
     @property
-    def part_a_grade(self, value):
+    def part_a_grade(self):
         return self._part_a
 
     @part_a_grade.setter
