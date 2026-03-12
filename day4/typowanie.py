@@ -127,3 +127,14 @@ class Stack[V]:
 
     def pop(self) -> V:
         return self._container.pop()
+
+
+from typing import Literal
+
+
+def set_status(status: Literal['active', 'inactive', 'pending']) -> str:
+    return f"Status to: {status}"
+
+
+print(set_status('active'))  # Status to: active
+print(set_status('destroy'))  # Status to: destroy
