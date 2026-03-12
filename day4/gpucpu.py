@@ -8,7 +8,7 @@ def cpufunction(a):
         a[i] += 1
 
 
-@jit(nopython=True)
+@jit(nopython=True) # uzywa LLVM
 def gpufunction(a):
     for i in range(10_000_000):
         a[i] += 1
