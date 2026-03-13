@@ -32,7 +32,7 @@ def cr():
                                 """
 
     sql_create_tasks_table = """
-                             CREATE TABLE IF NOT EXIST tasks
+                             CREATE TABLE IF NOT EXISTS tasks
                              (
                                  id
                                  integer
@@ -60,10 +60,10 @@ def cr():
                                  KEY
                              (
                                  project_id
-                             ) REFERENES projects
+                             ) REFERENCES projects
                              (
                                  id
-                             ))
+                             )
                                  );"""
 
     conn = create_connection(database)
