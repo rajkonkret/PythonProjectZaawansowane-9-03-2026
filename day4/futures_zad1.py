@@ -16,7 +16,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
 
     print(f"wynik: {results}")
 # start zadania 0
-# start zadania 1
+# start zadania 1m
 # start zadania 2
 # start zadania 3
 # Koniec zdarzenia 0
