@@ -7,4 +7,5 @@ dependencies = [
     "joblib>=1.5.3",
     "numba>=0.64.0",
     "numpy>=2.4.3",
+    "sqlalchemy>=2.0.48",
 ]
