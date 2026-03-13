@@ -1,0 +1,35 @@
+from sqlite3 import Error
+from conn import create_connection
+
+def create_table(conn, create_table_sql):
+    try:
+        c = conn.cursor()
+        c.execute(create_table_sql)
+    except Error as e:
+        print(e)
+
+
+def cr():
+    database = r"sql\mojabaza12.db"
+
+    sql_create_projects_table = """
+    CREATE TABLE IF NOT EXISTS projects (
+        id integer PRIMARY KEY,
+        name text NOT NULL,
+        begin_date text,
+        end_date text
+        );
+        """
+
+    sql_create_tasks_table = """
+    CREATE TABLE IF NOT EXIST tasks (
+    id integer PRIMARY KEY,
+    name text NOT NULL,
+    priority integer,
+    status_id integer NOT NULL,
+    project_id integer NOT NULL,
+    begin_date text,
+    end_date text,
+    FOREIGN KEY (project_id) REFERENES projects(id))
+        );"""
+
