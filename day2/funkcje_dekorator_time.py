@@ -1,6 +1,6 @@
 import time
 import operator
-from functools_ex import partial
+from functools import partial
 
 import numpy as np
 

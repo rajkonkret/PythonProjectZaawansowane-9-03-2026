@@ -82,7 +82,8 @@ def memoizacja(funkcja):
 
     def wrapper(*args):
         if args in cache:
-            print(f"Zwracanie wyniku z ache dla argumentów {args}")
+            print(f"Zwracanie wyniku z c"
+                  f"ache dla argumentów {args}")
             print(f"funkcja: {funkcja.__name__}({args} -> {funkcja(*args)})")
             return cache[args]
         else:

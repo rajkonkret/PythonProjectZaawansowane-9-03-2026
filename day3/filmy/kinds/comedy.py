@@ -1,4 +1,4 @@
-from idlelib.debugobj import ClassTreeItem
+#from idlelib.debugobj import ClassTreeItem
 
 from day3.filmy.film import Film
 from day3.filmy.series import SeriesPart
