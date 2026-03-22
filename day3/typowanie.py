@@ -24,12 +24,12 @@ Coordinate = Tuple[float, float]
 Path = List[Coordinate]
 CoordinateError = Union[Coordinate, int]
 
-
 def validate_coordinate(coord: CoordinateError) -> bool:
     if isinstance(coord, str):
         print(f"Error: {coord}")
         return False
     return True
+
 
 
 example_path = [(0.0, 1.0), (2.5, 3.5), (4.0, -1.2), ("True", True)]
@@ -128,7 +128,12 @@ class Stack[V]:
     def pop(self) -> V:
         return self._container.pop()
 
-
+stack = Stack[int]()
+stack.push(10)
+stack.push(12)
+stack.push(8.8)
+stack.push("abcz")
+print(stack.pop())
 from typing import Literal
 
 
